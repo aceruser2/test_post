@@ -6,11 +6,12 @@ metadata:
 spec:
   selector:
     app: postgres-service
-  type: LoadBalancer
+  # type: LoadBalancer
+  type: NodePort
   ports:
     - name: postgres-service
       port: 5432
       targetPort: 5432
       # If you set the `spec.type` field to `NodePort` and you want a specific port number,
       # you can specify a value in the `spec.ports[*].nodePort` field.
-      # nodePort: 30001
+      nodePort: 30001
